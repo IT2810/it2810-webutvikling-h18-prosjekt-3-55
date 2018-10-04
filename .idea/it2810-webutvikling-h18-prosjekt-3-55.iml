@@ -3,6 +3,8 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/prosjekt3/node_modules/expo-sensors-interface/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/prosjekt3/node_modules/expo-sensors-interface/build" />
       <excludeFolder url="file://$MODULE_DIR$/reactnativedemo/node_modules/expo-permissions/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/reactnativedemo/node_modules/expo-permissions/build" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />

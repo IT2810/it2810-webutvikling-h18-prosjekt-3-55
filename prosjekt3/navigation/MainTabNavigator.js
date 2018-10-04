@@ -3,12 +3,12 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import TodoScreen from '../screens/TodoScreen';
+import CalendarScreen from '../screens/CalendarScreen';
+import AppointmentScreen from '../screens/AppointmentScreen';
 
 const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+  Home: TodoScreen,
 });
 
 HomeStack.navigationOptions = {
@@ -25,11 +25,11 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const CalendarStack = createStackNavigator({
+  Links: CalendarScreen,
 });
 
-LinksStack.navigationOptions = {
+CalendarStack.navigationOptions = {
   tabBarLabel: 'Links',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -40,7 +40,7 @@ LinksStack.navigationOptions = {
 };
 
 const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+  Settings: AppointmentScreen,
 });
 
 SettingsStack.navigationOptions = {
@@ -55,6 +55,6 @@ SettingsStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   HomeStack,
-  LinksStack,
+  CalendarStack,
   SettingsStack,
 });
