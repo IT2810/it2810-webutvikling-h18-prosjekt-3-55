@@ -7,12 +7,12 @@ import TodoScreen from '../screens/TodoScreen';
 import CalendarScreen from '../screens/CalendarScreen';
 import AppointmentScreen from '../screens/AppointmentScreen';
 
-const HomeStack = createStackNavigator({
-  Home: TodoScreen,
+const TodoStack = createStackNavigator({
+  TODO: TodoScreen,
 });
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+TodoStack.navigationOptions = {
+  tabBarLabel: 'TODO',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -25,12 +25,15 @@ HomeStack.navigationOptions = {
   ),
 };
 
+
+
+
 const CalendarStack = createStackNavigator({
-  Links: CalendarScreen,
+  Calendar: CalendarScreen,
 });
 
 CalendarStack.navigationOptions = {
-  tabBarLabel: 'Links',
+  tabBarLabel: 'Calendar',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -39,22 +42,10 @@ CalendarStack.navigationOptions = {
   ),
 };
 
-const SettingsStack = createStackNavigator({
-  Settings: AppointmentScreen,
-});
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
-    />
-  ),
-};
 
 export default createBottomTabNavigator({
-  HomeStack,
+  TodoStack,
   CalendarStack,
-  SettingsStack,
+
 });

@@ -10,7 +10,8 @@ export default class CalendarScreen extends React.Component {
   render() {
     return (
         <Text style={styles.tran}>
-            hallo
+            hallo 
+            yoyo
         </Text>
     );
   }
@@ -23,4 +24,3 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     }
 });
-
