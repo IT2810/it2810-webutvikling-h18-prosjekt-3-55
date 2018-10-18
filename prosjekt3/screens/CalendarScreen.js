@@ -4,13 +4,14 @@ import { ExpoLinksView } from '@expo/samples';
 
 export default class CalendarScreen extends React.Component {
   static navigationOptions = {
-    title: 'fwefsds',
+    title: 'Calendar',
   };
 
   render() {
     return (
         <Text style={styles.tran}>
             hallo
+            yoyo
         </Text>
     );
   }
@@ -23,4 +24,3 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     }
 });
-
