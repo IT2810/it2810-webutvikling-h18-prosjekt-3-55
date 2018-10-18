@@ -2,9 +2,9 @@ import React from 'react';
 import { ScrollView, StyleSheet, Text } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 
-export default class CalendarScreen extends React.Component {
+export default class TodoScreen extends React.Component {
   static navigationOptions = {
-    title: 'fwefsds',
+    title: 'TODOs',
   };
 
   render() {
