@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text } from 'react-native';
-import { ExpoLinksView } from '@expo/samples';
+import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 
 export default class CalendarScreen extends React.Component {
   static navigationOptions = {
@@ -9,10 +9,9 @@ export default class CalendarScreen extends React.Component {
 
   render() {
     return (
-        <Text style={styles.tran}>
-            hallo
-            yoyo
-        </Text>
+        <Calendar
+
+        />
     );
   }
 }
