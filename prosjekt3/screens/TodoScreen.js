@@ -14,10 +14,14 @@ import { ScrollView,
   Keyboard,
   Platform } from 'react-native';
 import ScrollViewExample from '../components/TodoContainer';
-import { CheckBox } from 'react-native-elements';
+import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 
 
 export default class TodoScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Calendar',
+  };
+
   static navigationOptions = {
     title: 'TODOs',
   };
@@ -28,9 +32,21 @@ export default class TodoScreen extends React.Component {
 
   render() {
 
-    return (
-      <ScrollViewExample />
 
+    return (
+      <View >
+      <View >
+      <StatusBar
+     backgroundColor="blue"
+     barStyle="light-content"
+   />
+      <Calendar
+      />
+      </View>
+      <View>
+      <ScrollViewExample />
+</View>
+</View>
 
 
     );

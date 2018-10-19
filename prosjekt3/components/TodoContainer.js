@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Text, Image, View, StyleSheet, ScrollView } from 'react-native';
-import { CheckBox } from 'react-native-elements'
 import TabBarIcon from './TabBarIcon';
 const check = 1;
 
@@ -8,7 +7,7 @@ class ScrollViewExample extends Component {
    state = {
 
       todos: [
-         {'task': 'Ben', 'id': 1, 'checked':0},
+         {'task': 'Benny', 'id': 1, 'checked':0},
          {'task': 'Susan', 'id': 2, 'checked':0},
          {'task': 'Robert', 'id': 3, 'checked':0},
          {'task': 'Mary', 'id': 4, 'checked':0},
@@ -26,11 +25,12 @@ class ScrollViewExample extends Component {
       return (
          <View>
             <ScrollView>
-               {
-                  this.state.todos.map((item, index) => (
+               {!!this.state.todos.map((item, index) => (
                      <View key = {item.id} style = {styles.item} >
                      check = {item.checked}
-                        <Text>{item.task}                                                                                                       </Text>
+                        <Text>{item.task}
+
+                                                                                     </Text>
                           <TabBarIcon
                             name={
                                  `md-checkbox${ item.checked ? '' : '-outline'}`
@@ -53,7 +53,7 @@ const styles = StyleSheet.create ({
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'flex-start',
-      padding: 30,
+      padding: 15,
       margin: 2,
       borderColor: '#23B5D3',
       borderWidth: 1,
