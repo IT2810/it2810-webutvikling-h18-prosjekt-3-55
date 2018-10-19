@@ -12,9 +12,11 @@ import { ScrollView,
   Button,
   TextInput,
   Keyboard,
+  TouchableOpacity,
   Platform } from 'react-native';
 import ScrollViewExample from '../components/TodoContainer';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
+import {store, retrieve} from "../components/Storage";
 
 
 export default class TodoScreen extends React.Component {
@@ -25,30 +27,69 @@ export default class TodoScreen extends React.Component {
   static navigationOptions = {
     title: 'TODOs',
   };
-  state = {
-    tasks: [],
-    text: 'tester'
-  };
+
+      constructor(props) {
+          super(props);
+          this.state = {
+          tasks: [],
+              text: 'tester',
+              todos: [
+              {'task': 'Ta medisinene dine', 'id': 1, 'checked': 0},
+              {'task': 'Puss tennene', 'id': 2, 'checked': 0},
+              {'task': 'Gi en god klem', 'id': 3, 'checked': 0},
+              {'task': 'Ha en nydelig dag', 'id': 4, 'checked': 0},],
+              key: '2018-12-18'
+
+
+
+
+
+}
+
+  handelonpress=(day, item)=>{
+      store(key,item)
+      this.setState({key: day})
+
+
+
+
+  }
 
   render() {
 
 
     return (
       <View >
-      <Calendar
+      <Calendar onDayPress={(day) => {this.handelonpress(day.dateString, this.state.todos)} }
       />
-   <ScrollViewExample />
+
+          <View>
+              <ScrollView>
+                  {this.state.todos.map((item, index) => (
+                      <View key = {item.id} style = {styles.item} >
+                          <Text>{item.task}</Text>
+                      </View>
+                  ))}
+              </ScrollView>
+              <Text>  </Text>
+          </View>
 </View>
 
 
     );
   }
 }
-const styles = StyleSheet.create({
-    tran: {
-        fontSize: 17,
-        color: 'rgba(96,100,109, 1)',
-        lineHeight: 24,
-        textAlign: 'center',
+const styles = StyleSheet.create ({
+    item: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+        padding: 15,
+        margin: 2,
+        borderColor: '#23B5D3',
+        borderWidth: 1,
+        backgroundColor: '#F7F7FF'
     }
-});
+})
+
+
