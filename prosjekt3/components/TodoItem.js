@@ -12,6 +12,7 @@ export default class TodoItem extends React.Component {
         task={this.props.task}
         checked={this.props.checked}
         id={this.props.id}
+        date = {this.props.date}
       />
     );
   }

@@ -35,17 +35,9 @@ export default class TodoScreen extends React.Component {
 
     return (
       <View >
-      <View >
-      <StatusBar
-     backgroundColor="blue"
-     barStyle="light-content"
-   />
       <Calendar
       />
-      </View>
-      <View>
-      <ScrollViewExample />
-</View>
+   <ScrollViewExample />
 </View>
 
 

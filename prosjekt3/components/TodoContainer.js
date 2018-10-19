@@ -1,36 +1,46 @@
 import React, { Component } from 'react';
 import { Text, Image, View, StyleSheet, ScrollView } from 'react-native';
 import TabBarIcon from './TabBarIcon';
-const check = 1;
+import { AsyncStorage } from "react-native"
+
+
+_storeData = async () => {
+  try {
+    await AsyncStorage.setItem('@MySuperStore:key', 'I like to save it.');
+  } catch (error) {
+    // Error saving data
+  }
+}
+
+_retrieveData = async () => {
+  try {
+    const value = await AsyncStorage.getItem('TASKS');
+    if (value !== null) {
+      // We have data!!
+      console.log(value);
+    }
+   } catch (error) {
+     // Error retrieving data
+   }
+}
 
 class ScrollViewExample extends Component {
    state = {
 
       todos: [
-         {'task': 'Benny', 'id': 1, 'checked':0},
-         {'task': 'Susan', 'id': 2, 'checked':0},
-         {'task': 'Robert', 'id': 3, 'checked':0},
-         {'task': 'Mary', 'id': 4, 'checked':0},
-         {'task': 'Daniel', 'id': 5, 'checked':1},
-         {'task': 'Laura', 'id': 6, 'checked':0},
-         {'task': 'John', 'id': 7, 'checked':0},
-         {'task': 'Debra', 'id': 8, 'checked':0},
-         {'task': 'Aron', 'id': 9, 'checked':0},
-         {'task': 'Ann', 'id': 10, 'checked':0},
-         {'task': 'Steve', 'id': 11, 'checked':0},
-         {'task': 'Olivia', 'id': 12, 'checked':1}
+         {'task': 'Ta medisinene dine', 'id': 1, 'checked':0},
+         {'task': 'Puss tennene', 'id': 2, 'checked':0},
+         {'task': 'Gi en god klem', 'id': 3, 'checked':0},
+         {'task': 'Ha en nydelig dag', 'id': 4, 'checked':0},
       ]
    }
    render() {
       return (
          <View>
             <ScrollView>
-               {!!this.state.todos.map((item, index) => (
+               {this.state.todos.map((item, index) => (
                      <View key = {item.id} style = {styles.item} >
-                     check = {item.checked}
-                        <Text>{item.task}
-
-                                                                                     </Text>
+                        <Text>{item.task}  </Text>
                           <TabBarIcon
                             name={
                                  `md-checkbox${ item.checked ? '' : '-outline'}`
