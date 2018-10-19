@@ -13,8 +13,8 @@ import { ScrollView,
   TextInput,
   Keyboard,
   Platform } from 'react-native';
-import ScrollViewExample from '../components/TodoContainer';
-import { CheckBox } from 'react-native-elements';
+import TodoContainer from '../components/TodoContainer';
+import TodoList from 'TodoList-ReactNative'
 
 
 export default class TodoScreen extends React.Component {
@@ -29,7 +29,26 @@ export default class TodoScreen extends React.Component {
   render() {
 
     return (
-      <ScrollViewExample />
+      <Text style={styles.tran}>
+        <TodoContainer> </TodoContainer>
+
+      <Button
+      onPress={() => {
+    Alert.alert('You tapped the button!');
+  }}
+      title="Learn More"
+      color="#841584"
+      accessibilityLabel="Learn more about this purple button"
+      />
+
+
+        <Text style={styles.tran} onPress={this.onPressTitle}>
+          {this.state.text}{'\n'}{'\n'}
+        </Text>
+        <Text numberOfLines={5}>
+          {this.state.tran}
+        </Text>
+      </Text>
 
 
 
