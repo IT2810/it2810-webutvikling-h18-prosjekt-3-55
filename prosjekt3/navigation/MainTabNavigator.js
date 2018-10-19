@@ -5,7 +5,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import TabBarIcon from '../components/TabBarIcon';
 import TodoScreen from '../screens/TodoScreen';
 import CalendarScreen from '../screens/CalendarScreen';
-import AppointmentScreen from '../screens/AppointmentScreen';
+
 
 const TodoStack = createStackNavigator({
   TODO: TodoScreen,

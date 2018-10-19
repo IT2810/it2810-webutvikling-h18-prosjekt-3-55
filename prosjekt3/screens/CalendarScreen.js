@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text } from 'react-native';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
+import {store} from "../components/Storage";
 
 export default class CalendarScreen extends React.Component {
   static navigationOptions = {
@@ -10,7 +11,7 @@ export default class CalendarScreen extends React.Component {
   render() {
     return (
         <Calendar
-
+            onDayPress={(day)=>{store("dates",day.dateString)}}
         />
     );
   }
