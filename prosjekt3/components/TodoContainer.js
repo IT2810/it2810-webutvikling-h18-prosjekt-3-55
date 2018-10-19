@@ -41,15 +41,9 @@ class ScrollViewExample extends Component {
                {this.state.todos.map((item, index) => (
                      <View key = {item.id} style = {styles.item} >
                         <Text>{item.task}  </Text>
-                          <TabBarIcon
-                            name={
-                                 `md-checkbox${ item.checked ? '' : '-outline'}`
-                            }
-                          />
-                        ),
+                          <TabBarIcon name={`md-checkbox${ item.checked ? '' : '-outline'}`}/>
                      </View>
-                  ))
-               }
+                  ))}
             </ScrollView>
             <Text>  </Text>
          </View>
