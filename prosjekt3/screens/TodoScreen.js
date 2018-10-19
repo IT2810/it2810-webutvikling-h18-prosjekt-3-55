@@ -31,36 +31,26 @@ export default class TodoScreen extends React.Component {
       constructor(props) {
           super(props);
           this.state = {
-          tasks: [],
+              tasks: [],
               text: 'tester',
               todos: [
-              {'task': 'Ta medisinene dine', 'id': 1, 'checked': 0},
-              {'task': 'Puss tennene', 'id': 2, 'checked': 0},
-              {'task': 'Gi en god klem', 'id': 3, 'checked': 0},
-              {'task': 'Ha en nydelig dag', 'id': 4, 'checked': 0},],
-              key: '2018-12-18'
+                  {'task': 'Ta medisinene dine', 'id': 1, 'checked': 0},
+                  {'task': 'Puss tennene', 'id': 2, 'checked': 0},
+                  {'task': 'Gi en god klem', 'id': 3, 'checked': 0},
+                  {'task': 'Ha en nydelig dag', 'id': 4, 'checked': 0},],
 
 
+          }
 
 
-
-}
-
-  handelonpress=(day, item)=>{
-      store(key,item)
-      this.setState({key: day})
-
-
-
-
-  }
+      }
 
   render() {
 
 
     return (
       <View >
-      <Calendar onDayPress={(day) => {this.handelonpress(day.dateString, this.state.todos)} }
+      <Calendar onDayPress={(day) => {store(day.dateString, this.state.todos)} }
       />
 
           <View>

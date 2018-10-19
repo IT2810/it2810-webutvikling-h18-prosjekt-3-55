@@ -12,7 +12,7 @@ export const retrieve = async (key) => {
 export const store = async (key, item) => {
     try {
         let jsonOfItem = await AsyncStorage.setItem(key, JSON.stringify(item));
-        console.log(key)
+        console.log(jsonOfItem)
     } catch (error) {
         console.log(error.message);
     }
